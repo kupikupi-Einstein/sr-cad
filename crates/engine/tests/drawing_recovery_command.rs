@@ -3,13 +3,13 @@
 
 #![cfg(not(target_arch = "wasm32"))]
 
-use cadcraft_engine::Session;
-use cadcraft_engine::autosave;
 use serde_json::json;
+use sr_cad_engine::Session;
+use sr_cad_engine::autosave;
 
 #[test]
 fn lists_and_discards_only_recoverable_autosave_files() {
-    let dir = std::env::temp_dir().join(format!("cadcraft-drawingrecovery-{}", std::process::id()));
+    let dir = std::env::temp_dir().join(format!("sr-cad-drawingrecovery-{}", std::process::id()));
     let _ = std::fs::remove_dir_all(&dir);
     std::fs::create_dir_all(&dir).unwrap();
     autosave::set_savefilepath(&dir.to_string_lossy());

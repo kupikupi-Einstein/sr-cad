@@ -1,8 +1,8 @@
 //! ATTEDIT / -ATTEDIT typed at the command line, and attribute tags matched in any case.
 
-use cadcraft_doc::{EntityKind, Handle};
-use cadcraft_engine::Session;
 use serde_json::{Value, json};
+use sr_cad_doc::{EntityKind, Handle};
+use sr_cad_engine::Session;
 
 /// Block B: a line from 0,0 to 10,0 with attributes T (default "one") and U (default "u").
 fn with_block() -> Session {

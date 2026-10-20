@@ -10,9 +10,9 @@
 use std::collections::{BTreeMap, HashMap, HashSet};
 use std::sync::Arc;
 
-use cadcraft_doc::{Block, DimStyle, Drawing, Entity, EntityKind, EntityStore, Handle, Layer, Linetype, MLeaderStyle, TableStyle, TextStyle};
 use serde::Serialize;
 use serde_json::{Value, json};
+use sr_cad_doc::{Block, DimStyle, Drawing, Entity, EntityKind, EntityStore, Handle, Layer, Linetype, MLeaderStyle, TableStyle, TextStyle};
 
 /// One error found in the drawing.
 #[derive(Clone, Debug, PartialEq, Serialize)]

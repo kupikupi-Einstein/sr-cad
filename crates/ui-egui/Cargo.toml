@@ -1,6 +1,6 @@
 [package]
-name = "cadcraft-ui-egui"
-description = "CADCraft user interface (egui): the swappable front end"
+name = "sr-cad-ui-egui"
+description = "SR-Cad user interface (egui): the swappable front end"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
@@ -11,12 +11,12 @@ workspace = true
 
 [dependencies]
 craft-ui = { workspace = true }
-cadcraft-geom = { workspace = true }
-cadcraft-color = { workspace = true }
-cadcraft-doc = { workspace = true }
-cadcraft-render = { workspace = true }
-cadcraft-engine = { workspace = true }
-cadcraft-fonts = { workspace = true }
+sr-cad-geom = { workspace = true }
+sr-cad-color = { workspace = true }
+sr-cad-doc = { workspace = true }
+sr-cad-render = { workspace = true }
+sr-cad-engine = { workspace = true }
+sr-cad-fonts = { workspace = true }
 egui = { workspace = true }
 # GPU canvas paint callback (same egui-wgpu/wgpu eframe uses with its "wgpu" feature).
 egui-wgpu = { workspace = true }

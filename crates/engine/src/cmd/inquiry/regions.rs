@@ -6,9 +6,9 @@
 //! second's inside the first; intersect: the loops inside the other region). Overlapping
 //! boundaries need curve splitting and report "not available yet".
 
-use cadcraft_doc::{EntityKind, Handle, HatchLoop, MAX_REGION_LOOPS, Region};
-use cadcraft_geom::{Line, Vec2, line_line, point_in_polygon};
 use serde_json::{Value, json};
+use sr_cad_doc::{EntityKind, Handle, HatchLoop, MAX_REGION_LOOPS, Region};
+use sr_cad_geom::{Line, Vec2, line_line, point_in_polygon};
 
 use super::super::machines::{SelOutcome, SelectPhase, SelectRun};
 use super::super::*;

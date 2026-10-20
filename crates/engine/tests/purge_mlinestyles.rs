@@ -3,10 +3,10 @@
 
 use std::sync::Arc;
 
-use cadcraft_engine::Session;
-use cadcraft_engine::doc::{Block, Common, Entity, EntityKind, Handle, Insert, MLine, MLineJust, MLineStyle, Space};
-use cadcraft_engine::geom::{Vec2, Vec3};
 use serde_json::json;
+use sr_cad_engine::Session;
+use sr_cad_engine::doc::{Block, Common, Entity, EntityKind, Handle, Insert, MLine, MLineJust, MLineStyle, Space};
+use sr_cad_engine::geom::{Vec2, Vec3};
 
 fn mline(style: &MLineStyle) -> EntityKind {
     EntityKind::MLine(MLine::new(style, &[Vec2::new(0.0, 0.0), Vec2::new(10.0, 0.0)], false, MLineJust::Zero, 1.0))

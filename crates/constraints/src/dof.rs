@@ -8,8 +8,8 @@
 
 use std::collections::HashSet;
 
-use cadcraft_doc::{Constraint, Drawing, Handle};
 use serde::Serialize;
+use sr_cad_doc::{Constraint, Drawing, Handle};
 
 use crate::model::Model;
 use crate::{Comp, MAX_CONSTRAINTS, SolveError, SolveOptions, build, lm};

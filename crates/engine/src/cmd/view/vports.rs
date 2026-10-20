@@ -10,9 +10,9 @@
 
 use std::sync::Arc;
 
-use cadcraft_doc::{Drawing, Space, VportConfig, VportTile};
-use cadcraft_geom::Vec2;
 use serde_json::{Value, json};
+use sr_cad_doc::{Drawing, Space, VportConfig, VportTile};
+use sr_cad_geom::Vec2;
 
 use super::super::qselect::wildcard;
 use super::super::*;

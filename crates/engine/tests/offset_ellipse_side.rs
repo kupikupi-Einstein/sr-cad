@@ -1,9 +1,9 @@
 //! OFFSET of a full ellipse goes to the side of the picked point (issue #501): an outside point
 //! gave an inward copy and an inside point an outward one.
 
-use cadcraft_engine::Session;
-use cadcraft_engine::doc::EntityKind;
 use serde_json::json;
+use sr_cad_engine::Session;
+use sr_cad_engine::doc::EntityKind;
 
 fn last_handle(s: &Session) -> String {
     let d = s.doc().unwrap();

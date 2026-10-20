@@ -1,8 +1,8 @@
 //! Attribute tools: BATTMAN editing (definitions edited, removed, reordered; references follow).
 
-use cadcraft_doc::{EntityKind, Handle};
-use cadcraft_engine::Session;
 use serde_json::{Value, json};
+use sr_cad_doc::{EntityKind, Handle};
+use sr_cad_engine::Session;
 
 /// Block B with attribute definitions A, B, C (defaults a, b, c) and a line, plus two references.
 fn drawing() -> (Session, Handle, Handle) {

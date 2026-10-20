@@ -5,9 +5,9 @@
 //! An [`MLine`] carries a copy of its style ([`MLine::def`]), so its geometry needs nothing
 //! else from the drawing: snapping, selection and trimming work from the entity alone.
 
-use cadcraft_color::Color;
-use cadcraft_geom::{Arc as GArc, Line as GLine, PI, Segment, Vec2, Vec3};
 use serde::{Deserialize, Serialize};
+use sr_cad_color::Color;
+use sr_cad_geom::{Arc as GArc, Line as GLine, PI, Segment, Vec2, Vec3};
 
 /// Most elements a multiline style has (as in the style dialog of the reference program).
 pub const MAX_MLINE_ELEMENTS: usize = 16;

@@ -1,9 +1,9 @@
 //! Properties moves justified TEXT by its alignment point: a TL text (placed by its alignment
 //! point, #342) lands where its new position says.
 
-use cadcraft_engine::Session;
-use cadcraft_engine::doc::{EntityKind, entity_bounds};
 use serde_json::json;
+use sr_cad_engine::Session;
+use sr_cad_engine::doc::{EntityKind, entity_bounds};
 
 #[test]
 fn moving_top_left_text_through_properties_moves_it() {

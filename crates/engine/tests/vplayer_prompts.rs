@@ -1,9 +1,9 @@
 //! VPLAYER typed at the command line asks for an option, layer names and the viewports to change
 //! instead of running the next inputs as commands.
 
-use cadcraft_doc::{EntityKind, Handle, Viewport};
-use cadcraft_engine::Session;
 use serde_json::json;
+use sr_cad_doc::{EntityKind, Handle, Viewport};
+use sr_cad_engine::Session;
 
 fn vp(s: &Session, h: &str) -> Viewport {
     let h = Handle::parse_hex(h).unwrap();

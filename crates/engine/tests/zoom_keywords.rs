@@ -1,9 +1,9 @@
 //! Typed ZOOM Center, Scale, Dynamic and a plain scale factor do what they say, and ZOOM All /
 //! Extents in paper space fit the sheet (#388).
 
-use cadcraft_engine::{Session, View};
-use cadcraft_geom::Vec2;
 use serde_json::json;
+use sr_cad_engine::{Session, View};
+use sr_cad_geom::Vec2;
 
 fn view(s: &Session) -> View {
     s.state().unwrap().view()

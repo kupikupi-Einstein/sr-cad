@@ -1,8 +1,8 @@
 //! ATTDISP (ATTMODE, honoured by the display) and ATTSYNC.
 
-use cadcraft_doc::{Attrib, EntityKind, Handle, Space};
-use cadcraft_engine::Session;
 use serde_json::{Value, json};
+use sr_cad_doc::{Attrib, EntityKind, Handle, Space};
+use sr_cad_engine::Session;
 
 /// Make block `name` from what is in model space now (the objects are removed).
 fn make_block(s: &mut Session, name: &str) {
@@ -29,7 +29,7 @@ fn attribs(s: &Session, h: Handle) -> Vec<Attrib> {
 }
 
 fn segments(s: &Session) -> usize {
-    cadcraft_render::build(s.doc().unwrap(), &Space::Model, &cadcraft_render::Options::default()).segment_count()
+    sr_cad_render::build(s.doc().unwrap(), &Space::Model, &sr_cad_render::Options::default()).segment_count()
 }
 
 #[test]

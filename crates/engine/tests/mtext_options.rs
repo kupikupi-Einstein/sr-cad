@@ -1,10 +1,10 @@
 //! MTEXT's options before the text: Height, Justify, Line spacing, Rotation, Style, Width and
 //! Columns, from the command line and scripts (#408).
 
-use cadcraft_doc::{EntityKind, MText, TextStyle};
-use cadcraft_engine::Session;
-use cadcraft_geom::Vec2;
 use serde_json::json;
+use sr_cad_doc::{EntityKind, MText, TextStyle};
+use sr_cad_engine::Session;
+use sr_cad_geom::Vec2;
 
 fn last_mtext(s: &Session) -> MText {
     match s.doc().unwrap().model.iter().last().map(|e| e.kind.clone()) {

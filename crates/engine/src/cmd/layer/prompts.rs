@@ -2,9 +2,9 @@
 //! the `layer.*` commands, so validation matches the JSON form and the whole session is one undo
 //! step.
 
-use cadcraft_color::Color;
-use cadcraft_doc::Lineweight;
 use serde_json::{Value, json};
+use sr_cad_color::Color;
+use sr_cad_doc::Lineweight;
 
 use super::super::find_command;
 use super::super::qselect::wildcard;

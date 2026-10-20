@@ -1,8 +1,8 @@
 //! Interactive commands: prompts, inputs and the command-line coordinate grammar.
 
-use cadcraft_doc::{EntityKind, Handle};
-use cadcraft_geom::{Mat3, Vec2};
 use serde::Serialize;
+use sr_cad_doc::{EntityKind, Handle};
+use sr_cad_geom::{Mat3, Vec2};
 
 use crate::{Result, Session};
 
@@ -217,7 +217,7 @@ pub trait Interactive: Send {
     }
     /// The multiline text being typed (MTEXT, once its box is known) with empty contents: where
     /// the UI places its in-place editor and with which height, width and justification.
-    fn editing_mtext(&self) -> Option<cadcraft_doc::MText> {
+    fn editing_mtext(&self) -> Option<sr_cad_doc::MText> {
         None
     }
 }

@@ -8,22 +8,22 @@ version = "0.7.0"
 edition = "2024"
 license = "MIT OR Apache-2.0"
 rust-version = "1.90"
-repository = "https://github.com/storytold/cadcraft"
+repository = "https://github.com/kupikupi-Einstein/sr-cad"
 
 [workspace.dependencies]
 # internal
-cadcraft-geom = { path = "crates/geom" }
-cadcraft-dxf = { path = "crates/dxf" }
-cadcraft-dwg = { path = "crates/dwg" }
-cadcraft-color = { path = "crates/color" }
-cadcraft-doc = { path = "crates/doc" }
-cadcraft-constraints = { path = "crates/constraints" }
-cadcraft-fonts = { path = "crates/fonts" }
-cadcraft-render = { path = "crates/render" }
-cadcraft-io = { path = "crates/io" }
-cadcraft-engine = { path = "crates/engine" }
-cadcraft-ui-egui = { path = "crates/ui-egui" }
-cadcraft-mcp = { path = "crates/mcp" }
+sr-cad-geom = { path = "crates/geom" }
+sr-cad-dxf = { path = "crates/dxf" }
+sr-cad-dwg = { path = "crates/dwg" }
+sr-cad-color = { path = "crates/color" }
+sr-cad-doc = { path = "crates/doc" }
+sr-cad-constraints = { path = "crates/constraints" }
+sr-cad-fonts = { path = "crates/fonts" }
+sr-cad-render = { path = "crates/render" }
+sr-cad-io = { path = "crates/io" }
+sr-cad-engine = { path = "crates/engine" }
+sr-cad-ui-egui = { path = "crates/ui-egui" }
+sr-cad-mcp = { path = "crates/mcp" }
 
 # foundation
 thiserror = "2"

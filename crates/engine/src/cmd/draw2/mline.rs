@@ -1,13 +1,13 @@
 //! Multilines: MLINE draws one (Justification, Scale, STyle), MLSTYLE keeps the styles, MLEDIT
 //! edits crossings, tees, corners, vertices and breaks.
 
-use cadcraft_color::Color;
-use cadcraft_doc::{
+use serde_json::{Value, json};
+use sr_cad_color::Color;
+use sr_cad_doc::{
     Entity, EntityKind, Handle, MAX_MLINE_CUTS, MAX_MLINE_ELEMENTS, MLine, MLineCaps, MLineCut, MLineElement, MLineJust, MLineStyle, MLineVertex,
     STANDARD_MLINE_STYLE,
 };
-use cadcraft_geom::{Line, Vec2, line_line_infinite};
-use serde_json::{Value, json};
+use sr_cad_geom::{Line, Vec2, line_line_infinite};
 
 use super::curves::{self, MAX_GEN};
 use super::machines::number;
@@ -225,7 +225,7 @@ impl Interactive for MlineM {
 // MLSTYLE
 // =====================================================================================
 
-fn mline_in_use(d: &cadcraft_doc::Drawing, name: &str) -> bool {
+fn mline_in_use(d: &sr_cad_doc::Drawing, name: &str) -> bool {
     let uses = |e: &std::sync::Arc<Entity>| matches!(&e.kind, EntityKind::MLine(m) if m.style.eq_ignore_ascii_case(name));
     d.model.iter().any(uses) || d.layouts.iter().any(|l| l.entities.iter().any(uses)) || d.blocks.values().any(|b| b.entities.iter().any(uses))
 }
@@ -278,7 +278,7 @@ fn elements_param(p: &Value) -> Result<Option<Vec<MLineElement>>> {
     Ok(Some(out))
 }
 
-fn styles_value(d: &cadcraft_doc::Drawing) -> Value {
+fn styles_value(d: &sr_cad_doc::Drawing) -> Value {
     json!({ "current": d.header.str("CMLSTYLE", STANDARD_MLINE_STYLE), "styles": serde_json::to_value(&d.mline_styles).unwrap_or(Value::Null) })
 }
 
@@ -827,8 +827,8 @@ pub(crate) fn explode(e: &Entity, m: &MLine) -> Vec<Entity> {
     }
     for seg in &g.caps {
         let kind = match seg {
-            cadcraft_geom::Segment::Line(l) => crate::cmd::helpers::line(l.a, l.b),
-            cadcraft_geom::Segment::Arc { arc, .. } => crate::cmd::helpers::arc(arc),
+            sr_cad_geom::Segment::Line(l) => crate::cmd::helpers::line(l.a, l.b),
+            sr_cad_geom::Segment::Arc { arc, .. } => crate::cmd::helpers::arc(arc),
         };
         out.push(Entity { handle: Handle(0), common: e.common.clone(), kind });
     }

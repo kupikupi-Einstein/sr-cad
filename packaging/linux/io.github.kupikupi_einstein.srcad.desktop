@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=SR-Cad
+GenericName=Computer-Aided Design
+Comment=Draft, dimension and plot 2D drawings; open DXF and DWG files
+Exec=sr-cad %F
+TryExec=sr-cad
+Icon=io.github.kupikupi_einstein.srcad
+Terminal=false
+StartupNotify=true
+StartupWMClass=io.github.kupikupi_einstein.srcad
+Categories=Graphics;Engineering;VectorGraphics;
+MimeType=image/vnd.dxf;image/vnd.dwg;application/x-dxf;application/acad;
+Keywords=cad;drafting;dxf;dwg;drawing;engineering;architecture;mechanical;

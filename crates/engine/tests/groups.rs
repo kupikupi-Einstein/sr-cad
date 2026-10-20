@@ -1,10 +1,10 @@
 //! Groups (#417): GROUP, UNGROUP and GROUPEDIT, typed and as JSON; erased members leave their
 //! groups and empty groups go away. (The DXF round trip of groups is tested in
-//! `cadcraft-io`'s `tables_objects_roundtrip`.)
+//! `sr-cad-io`'s `tables_objects_roundtrip`.)
 
-use cadcraft_engine::doc::Handle;
-use cadcraft_engine::{Input, Session};
 use serde_json::json;
+use sr_cad_engine::doc::Handle;
+use sr_cad_engine::{Input, Session};
 
 /// A session with three lines; their handles.
 fn three_lines() -> (Session, Vec<Handle>) {

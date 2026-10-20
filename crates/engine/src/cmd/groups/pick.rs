@@ -4,8 +4,8 @@
 
 use std::collections::{HashMap, HashSet};
 
-use cadcraft_doc::Handle;
 use serde_json::{Value, json};
+use sr_cad_doc::Handle;
 
 use super::super::*;
 use crate::{Accept, Input, Interactive, Prompt, Result, Session, Step};

@@ -1,9 +1,9 @@
 //! ZOOM Window's opposite corner ignores ortho: the window stays a rectangle (#787).
 
-use cadcraft_engine::Session;
-use cadcraft_engine::snap::tracking::CursorQuery;
-use cadcraft_geom::Vec2;
 use serde_json::json;
+use sr_cad_engine::Session;
+use sr_cad_engine::snap::tracking::CursorQuery;
+use sr_cad_geom::Vec2;
 
 /// Move the cursor to `raw` at the current prompt, as the canvas does.
 fn hover(s: &mut Session, raw: Vec2) -> Vec2 {

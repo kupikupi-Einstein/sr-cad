@@ -4,14 +4,14 @@
 //! realtime navigation changes the viewport's view without a new revision, and the layout's list
 //! kept showing the old view until some command rebuilt it.
 
-use cadcraft_engine::Session;
-use cadcraft_engine::doc::{Circle, Common, Drawing, EntityKind, Line, Space, Viewport};
-use cadcraft_engine::geom::{Bounds2, Vec2, Vec3};
-use cadcraft_engine::render::VIEWPORT_CONTENT;
-use cadcraft_ui_egui::{CadApp, Services};
 use egui::vec2;
 use egui_kittest::Harness;
 use serde_json::json;
+use sr_cad_engine::Session;
+use sr_cad_engine::doc::{Circle, Common, Drawing, EntityKind, Line, Space, Viewport};
+use sr_cad_engine::geom::{Bounds2, Vec2, Vec3};
+use sr_cad_engine::render::VIEWPORT_CONTENT;
+use sr_cad_ui_egui::{CadApp, Services};
 
 /// Model space: a line from (0,0) to (20,0). Layout1: an 8×6 viewport centred at (5,4) on paper,
 /// looking at model (10,0) 40 units high (0.15 paper units per model unit), so the line spans
@@ -88,7 +88,7 @@ fn revision(h: &Harness<'_, CadApp>) -> u64 {
 fn pan(h: &mut Harness<'_, CadApp>, dx: f64) {
     let st = h.state_mut().session.state_mut().unwrap();
     let v = st.view();
-    st.set_view_quiet(cadcraft_engine::View { center: v.center - Vec2::new(dx, 0.0), height: v.height });
+    st.set_view_quiet(sr_cad_engine::View { center: v.center - Vec2::new(dx, 0.0), height: v.height });
 }
 
 /// A wheel step zooming in by `f` about the viewport's view centre.

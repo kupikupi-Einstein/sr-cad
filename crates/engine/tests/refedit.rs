@@ -1,9 +1,9 @@
 //! REFEDIT, REFSET and REFCLOSE: editing a block reference in place (#813).
 
-use cadcraft_engine::Session;
-use cadcraft_engine::doc::{Common, Drawing, EntityKind, Handle, Insert, Space};
-use cadcraft_engine::geom::Vec3;
 use serde_json::{Value, json};
+use sr_cad_engine::Session;
+use sr_cad_engine::doc::{Common, Drawing, EntityKind, Handle, Insert, Space};
+use sr_cad_engine::geom::Vec3;
 
 fn h(v: &Value) -> String {
     v.get("handle").unwrap_or(&v["handles"][0]).as_str().unwrap().to_string()
@@ -195,8 +195,8 @@ fn files_never_hold_half_an_edit() {
     assert!(committed.refedit.is_none());
     assert_eq!(committed.model.len(), 2);
     assert!(committed.entity(Handle::parse_hex(&a).unwrap()).unwrap().common.visible);
-    let dxf = cadcraft_io::write_dxf(d);
-    let back = cadcraft_io::read_dxf(dxf.as_bytes()).unwrap();
+    let dxf = sr_cad_io::write_dxf(d);
+    let back = sr_cad_io::read_dxf(dxf.as_bytes()).unwrap();
     assert_eq!(back.model.len(), 2);
 }
 
@@ -250,7 +250,7 @@ fn a_block_that_references_itself_in_a_file_does_not_hang() {
     let d = s.doc_mut().unwrap();
     let hh = d.new_handle();
     let mut b = (**d.block("B").unwrap()).clone();
-    b.entities.push(cadcraft_engine::doc::Entity::new(hh, kind));
+    b.entities.push(sr_cad_engine::doc::Entity::new(hh, kind));
     d.blocks.insert("B".into(), std::sync::Arc::new(b));
     s.execute("refedit", &json!({ "handle": a })).unwrap();
     assert!(s.execute("refclose", &json!({})).is_err());
@@ -259,7 +259,7 @@ fn a_block_that_references_itself_in_a_file_does_not_hang() {
 
 #[test]
 fn interactive_refedit_refset_and_refclose() {
-    use cadcraft_engine::Input;
+    use sr_cad_engine::Input;
     let (mut s, a, _) = setup();
     let other = h(&s.execute("line", &json!({ "points": [[300, 0], [310, 0]] })).unwrap());
     s.start("refedit").unwrap();
@@ -282,7 +282,7 @@ fn xrefs_are_refused_with_a_message() {
     s.doc_mut().unwrap().blocks.insert(
         "X".into(),
         std::sync::Arc::new({
-            let mut b = cadcraft_engine::doc::Block::new("X");
+            let mut b = sr_cad_engine::doc::Block::new("X");
             b.xref_path = Some("x.dxf".into());
             b
         }),

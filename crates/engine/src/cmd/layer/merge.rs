@@ -6,8 +6,8 @@
 
 use std::collections::HashSet;
 
-use cadcraft_doc::{Drawing, EntityKind, EntityStore, Handle};
 use serde_json::{Value, json};
+use sr_cad_doc::{Drawing, EntityKind, EntityStore, Handle};
 
 use super::super::{bad, find_command, str_param};
 use crate::{Accept, EngineError, Input, Interactive, Prompt, Result, Session, Step};

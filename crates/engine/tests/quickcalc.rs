@@ -1,8 +1,8 @@
 //! CAL and the engine side of the QuickCalc palette: points and vector functions, unit
 //! conversion, values picked from the drawing (#563).
 
-use cadcraft_engine::Session;
 use serde_json::json;
+use sr_cad_engine::Session;
 
 #[test]
 fn cal_evaluates_points_and_vector_functions() {

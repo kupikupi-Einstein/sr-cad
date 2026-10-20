@@ -1,11 +1,11 @@
 //! Tiled model space viewports (#463): -VPORTS SIngle, 2/3/4, Join, Save, Restore, Delete and ?,
 //! View > Viewports > n in the Model tab, the current tile and its own view. (The DXF VPORT table
-//! round trip is tested in `cadcraft-io`'s `view_tables_roundtrip`.)
+//! round trip is tested in `sr-cad-io`'s `view_tables_roundtrip`.)
 
-use cadcraft_engine::doc::{EntityKind, Space};
-use cadcraft_engine::geom::Vec2;
-use cadcraft_engine::{ModelTile, Session, View};
 use serde_json::json;
+use sr_cad_engine::doc::{EntityKind, Space};
+use sr_cad_engine::geom::Vec2;
+use sr_cad_engine::{ModelTile, Session, View};
 
 fn session() -> Session {
     let mut s = Session::new();

@@ -2,8 +2,8 @@
 //! channel (`crates/ui-egui/tests/control_cmdline_key.rs`): a refused Enter is echoed and reported
 //! in `error`, and the call itself succeeds.
 
-use cadcraft_mcp::{Backend, Headless};
 use serde_json::{Value, json};
+use sr_cad_mcp::{Backend, Headless};
 
 fn keys(v: &Value) -> Vec<String> {
     let mut k: Vec<String> = v.as_object().map(|o| o.keys().cloned().collect()).unwrap_or_default();

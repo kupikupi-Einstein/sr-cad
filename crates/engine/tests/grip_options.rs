@@ -2,10 +2,10 @@
 //! Copy, Undo, Reference and eXit; Enter cycles the modes; several grips can be hot at once.
 //! A whole grip edit, copies included, is one undo step.
 
-use cadcraft_engine::Session;
-use cadcraft_engine::doc::{EntityKind, Handle};
-use cadcraft_engine::geom::Vec2;
 use serde_json::json;
+use sr_cad_engine::Session;
+use sr_cad_engine::doc::{EntityKind, Handle};
+use sr_cad_engine::geom::Vec2;
 
 fn line(s: &mut Session, a: [f64; 2], b: [f64; 2]) -> Handle {
     let r = s.execute("line", &json!({ "points": [a, b] })).unwrap();

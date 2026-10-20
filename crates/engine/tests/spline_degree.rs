@@ -1,9 +1,9 @@
 //! Programmatic SPLINE keeps the degree within 1..=10 like the Degree prompt (issue #268): a high
 //! degree on many control points made tessellation and extents take minutes.
 
-use cadcraft_engine::Session;
-use cadcraft_engine::doc::EntityKind;
 use serde_json::json;
+use sr_cad_engine::Session;
+use sr_cad_engine::doc::EntityKind;
 
 #[test]
 fn programmatic_spline_degree_is_limited() {

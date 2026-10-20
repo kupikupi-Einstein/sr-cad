@@ -3,9 +3,9 @@
 //! The model has one landing per multileader: its leaders are polylines from an arrowhead to that
 //! landing, so "add leader" pushes one more arrowhead polyline and "remove leader" drops one.
 
-use cadcraft_doc::{Entity, EntityKind, Handle, Insert, MLeader};
-use cadcraft_geom::{Vec2, Vec3};
 use serde_json::{Value, json};
+use sr_cad_doc::{Entity, EntityKind, Handle, Insert, MLeader};
+use sr_cad_geom::{Vec2, Vec3};
 
 use super::helpers::v3;
 use super::machines::{SelOutcome, SelectPhase};
@@ -584,7 +584,7 @@ enum Layout {
 fn block_box(s: &Session, ins: &Insert) -> Result<(Vec2, Vec2)> {
     let d = s.doc()?;
     let probe = Entity { handle: Handle(0), common: Default::default(), kind: EntityKind::Insert(ins.clone()) };
-    let b = cadcraft_doc::entity_bounds(d, &probe, 0);
+    let b = sr_cad_doc::entity_bounds(d, &probe, 0);
     if b.is_empty() || !b.center().is_finite() {
         return Ok((Vec2::new(0.0, 0.0), ins.insert.xy()));
     }

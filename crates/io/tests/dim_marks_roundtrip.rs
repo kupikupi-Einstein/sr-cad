@@ -1,10 +1,10 @@
 //! Dimension edits survive DXF: the oblique angle as group 52 (relative to the dimension line,
-//! DXF Reference), jogs, breaks and inspection frames as CADCraft xdata. Damaged xdata is
+//! DXF Reference), jogs, breaks and inspection frames as SR-Cad xdata. Damaged xdata is
 //! skipped.
 
-use cadcraft_doc::{Common, DimBreak, DimKind, DimMarks, Dimension, Drawing, EntityKind, Inspection, JoggedRadius, Space};
-use cadcraft_geom::Vec3;
-use cadcraft_io::{read_dxf, write_dxf};
+use sr_cad_doc::{Common, DimBreak, DimKind, DimMarks, Dimension, Drawing, EntityKind, Inspection, JoggedRadius, Space};
+use sr_cad_geom::Vec3;
+use sr_cad_io::{read_dxf, write_dxf};
 
 fn dim(kind: DimKind, marks: DimMarks) -> EntityKind {
     EntityKind::Dimension(Dimension {

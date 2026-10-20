@@ -5,9 +5,9 @@
 use std::collections::{BTreeMap, HashMap};
 use std::rc::Rc;
 
-use cadcraft_doc::{Drawing, Entity, EntityKind, Handle, Insert, MAX_BLOCK_DEPTH, Space};
-use cadcraft_geom::{Mat3, Vec2};
 use serde_json::{Value, json};
+use sr_cad_doc::{Drawing, Entity, EntityKind, Handle, Insert, MAX_BLOCK_DEPTH, Space};
+use sr_cad_geom::{Mat3, Vec2};
 
 use super::super::*;
 use crate::{Accept, Input, Interactive, Prompt, Result, Session, Step};
@@ -330,7 +330,7 @@ pub(super) fn run_countlist(s: &mut Session, p: &Value) -> Result<Value> {
 }
 
 /// The current table style (CTABLESTYLE, else the first).
-fn table_style(s: &Session) -> cadcraft_doc::TableStyle {
+fn table_style(s: &Session) -> sr_cad_doc::TableStyle {
     let Ok(d) = s.doc() else { return Default::default() };
     let cur = d.header.str("CTABLESTYLE", "Standard");
     d.table_styles.iter().find(|t| t.name.eq_ignore_ascii_case(&cur)).or(d.table_styles.first()).cloned().unwrap_or_default()

@@ -7,8 +7,8 @@
 
 use std::collections::{HashMap, HashSet};
 
-use cadcraft_geom::{Vec2, Vec3};
 use serde::Serialize;
+use sr_cad_geom::{Vec2, Vec3};
 
 use super::{ParameterKind, Value, custom_properties, dynamic_block, reference};
 use crate::{Drawing, EntityKind, Handle};

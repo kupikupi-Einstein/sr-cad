@@ -2,8 +2,8 @@
 
 use std::collections::BTreeMap;
 
-use cadcraft_geom::{Vec2, Vec3};
 use serde::{Deserialize, Serialize};
+use sr_cad_geom::{Vec2, Vec3};
 
 /// A header variable value.
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]

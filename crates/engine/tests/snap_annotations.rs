@@ -1,10 +1,10 @@
 //! Snaps on dimensions, justified text and hatches; the snap grid's base and angle (#334).
 
-use cadcraft_doc::{Common, EntityKind, HAlign, Space, Text, VAlign};
-use cadcraft_engine::Session;
-use cadcraft_engine::snap::{self, mode};
-use cadcraft_geom::{Vec2, Vec3};
 use serde_json::json;
+use sr_cad_doc::{Common, EntityKind, HAlign, Space, Text, VAlign};
+use sr_cad_engine::Session;
+use sr_cad_engine::snap::{self, mode};
+use sr_cad_geom::{Vec2, Vec3};
 
 /// The snap of `modes` near `p` (a hair off it, inside a 0.1 aperture).
 fn snap_at(s: &Session, p: Vec2, modes: u32) -> Option<(Vec2, u32)> {

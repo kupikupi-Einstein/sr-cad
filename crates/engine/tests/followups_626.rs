@@ -1,11 +1,11 @@
 //! Drafting follow-ups (#626): isometric snap gives way to PolarSnap, and MVIEW Restore puts a
 //! model space viewport configuration on a layout.
 
-use cadcraft_doc::{EntityKind, Space, Viewport, VportTile};
-use cadcraft_engine::Session;
-use cadcraft_engine::geom::{Bounds2, Vec2};
-use cadcraft_engine::snap::tracking::CursorQuery;
 use serde_json::{Value, json};
+use sr_cad_doc::{EntityKind, Space, Viewport, VportTile};
+use sr_cad_engine::Session;
+use sr_cad_engine::geom::{Bounds2, Vec2};
+use sr_cad_engine::snap::tracking::CursorQuery;
 
 fn v(x: f64, y: f64) -> Vec2 {
     Vec2::new(x, y)
@@ -57,7 +57,7 @@ fn viewports(s: &Session, layout: &str, handles: &Value) -> Vec<Viewport> {
         .unwrap()
         .iter()
         .map(|h| {
-            let h = cadcraft_doc::Handle::parse_hex(h.as_str().unwrap()).unwrap();
+            let h = sr_cad_doc::Handle::parse_hex(h.as_str().unwrap()).unwrap();
             match &st.get(h).unwrap().kind {
                 EntityKind::Viewport(v) => v.clone(),
                 other => panic!("not a viewport: {other:?}"),

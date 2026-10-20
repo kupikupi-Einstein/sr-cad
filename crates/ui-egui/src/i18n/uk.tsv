@@ -1,6 +1,6 @@
-# CADCraft Ukrainian interface catalog — original translations by @dmatviichuk.
+# SR-Cad Ukrainian interface catalog — original translations by @dmatviichuk.
 # License: MIT OR Apache-2.0 (the repository LICENSE-MIT and LICENSE-APACHE).
-# Written from CADCraft's English strings; no proprietary translations were copied.
+# Written from SR-Cad's English strings; no proprietary translations were copied.
 # UTF-8: context<TAB>English source<TAB>Ukrainian translation.
 # Empty context = ordinary label; @plural = one|few|many forms with {n}.
 # Keep command IDs, keywords, technology/product names and user data unchanged.
@@ -52,7 +52,7 @@
 	> Greater than	> Більше ніж
 	A variable name starts with a letter and has only letters, digits and _	Ім'я змінної починається з літери й містить лише літери, цифри та _
 	About	Про програму
-	About CADCraft	Про CADCraft
+	About SR-Cad	Про SR-Cad
 	Absolute	Абсолютні
 	Add Leader	Додати виноску
 	Additional angles	Додаткові кути
@@ -113,7 +113,7 @@
 	ByBlock	За блоком
 	ByColor	За кольором
 	ByLayer	За шаром
-	CADCraft Help	Довідка CADCraft
+	SR-Cad Help	Довідка SR-Cad
 	Cancel	Скасувати
 	Cartesian (x, y)	Декартові (x, y)
 	Center	Центр
@@ -443,8 +443,6 @@
 	Jogged	Зі зламом
 	Jogged Linear	Лінійний зі зламом
 	Join	Об'єднати
-	Join the ArtCraft Discord…	Приєднатися до Discord ArtCraft…
-	Join us on Discord	Приєднуйтеся до нас у Discord
 	Isometric Plane	Ізометрична площина
 	Isometric snap	Ізометрична крокова прив'язка
 	Language	Мова
@@ -509,6 +507,7 @@
 	Lock/Unlock	Заблокувати/розблокувати
 	Loft	Тіло за перерізами
 	MIT OR Apache-2.0. Not affiliated with Autodesk, Inc.	MIT OR Apache-2.0. Не пов'язано з Autodesk, Inc.
+	Based on CADCraft by the ArtCraft team.	Засновано на CADCraft від команди ArtCraft.
 	MODEL	МОДЕЛЬ
 	MText	Багаторядковий текст
 	Magenta	Пурпуровий
@@ -585,7 +584,6 @@
 	Offset	Зміщення
 	On	Увімкнено
 	On/Off	Увімкнути/вимкнути
-	One of the Crafting Apps by the ArtCraft team and community.	Одна з програм Crafting Apps від команди та спільноти ArtCraft.
 	Only in this drawing: {n}	Лише в цьому кресленні: {n}
 	Only in {name}: {n}	Лише в {name}: {n}
 	Open (⌘O)	Відкрити (⌘O)
@@ -705,7 +703,7 @@
 	Quick Select...	Швидкий вибір...
 	QuickCalc	Калькулятор
 	QuickCalc Pick	Вибір для калькулятора
-	Quit CADCraft	Вийти з CADCraft
+	Quit SR-Cad	Вийти з SR-Cad
 	Radius	Радіус
 	Raster Image	Растрове зображення
 	Ray	Промінь
@@ -940,7 +938,7 @@
 # Options dialog (OPTIONS).
 	A drawing opened from a file keeps that file's format.	Креслення, відкрите з файлу, зберігає формат цього файлу.
 	An array that would create more objects than this is refused.	Масив, що створив би більше об'єктів, буде відхилено.
-	CADCraft keeps these preferences, object snap modes and drafting toggles for your user account and restores them when it starts.	CADCraft зберігає ці параметри, режими об'єктної прив'язки та перемикачі креслення для вашого облікового запису й відновлює їх під час запуску.
+	SR-Cad keeps these preferences, object snap modes and drafting toggles for your user account and restores them when it starts.	SR-Cad зберігає ці параметри, режими об'єктної прив'язки та перемикачі креслення для вашого облікового запису й відновлює їх під час запуску.
 	Changes apply at once and are kept for next time.	Зміни застосовуються одразу й зберігаються на наступний раз.
 	Command line history	Історія командного рядка
 	Copy as JSON	Копіювати як JSON
@@ -1213,7 +1211,7 @@
 @plural	{n} contributor	{n} учасник|{n} учасники|{n} учасників
 	Drawing as bytes	Креслення як байти
 	Services	Служби
-	Hide CADCraft	Приховати CADCraft
+	Hide SR-Cad	Приховати SR-Cad
 	Hide Others	Приховати інші
 	Accessibility	Спеціальні можливості
 	Show System Cursor	Показувати системний курсор

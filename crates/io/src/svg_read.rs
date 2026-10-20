@@ -14,12 +14,12 @@
 
 use std::collections::HashSet;
 
-use cadcraft_color::Color;
-use cadcraft_doc::*;
-use cadcraft_geom::{Mat3, PolyVertex, Spline, Vec2, Vec3};
 use quick_xml::Reader;
 use quick_xml::XmlVersion;
 use quick_xml::events::{BytesStart, Event};
+use sr_cad_color::Color;
+use sr_cad_doc::*;
+use sr_cad_geom::{Mat3, PolyVertex, Spline, Vec2, Vec3};
 
 use crate::{IoError, Result};
 

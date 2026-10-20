@@ -2,10 +2,10 @@
 //! dimension updates) run the same whether a command is executed programmatically or typed and
 //! finished interactively, and their edits share that command's undo step.
 
-use cadcraft_engine::doc::{ConstraintKind, EntityKind, Handle};
-use cadcraft_engine::geom::{Bounds2, Polyline, Vec2};
-use cadcraft_engine::{Input, Session};
 use serde_json::{Value, json};
+use sr_cad_engine::doc::{ConstraintKind, EntityKind, Handle};
+use sr_cad_engine::geom::{Bounds2, Polyline, Vec2};
+use sr_cad_engine::{Input, Session};
 
 fn handle(v: &Value) -> Handle {
     Handle::parse_hex(v["handles"][0].as_str().or(v["handle"].as_str()).unwrap()).unwrap()

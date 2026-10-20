@@ -1,9 +1,9 @@
 //! OVERKILL (#439): duplicates within a tolerance, ignored properties, overlapping and end-to-end
 //! collinear lines, arcs on one circle, polyline segments, associativity, typed options.
 
-use cadcraft_engine::doc::{EntityKind, Handle};
-use cadcraft_engine::{Input, Session};
 use serde_json::{Value, json};
+use sr_cad_engine::doc::{EntityKind, Handle};
+use sr_cad_engine::{Input, Session};
 
 fn line(s: &mut Session, a: [f64; 2], b: [f64; 2]) -> Handle {
     s.execute("line", &json!({ "points": [a, b] })).unwrap();

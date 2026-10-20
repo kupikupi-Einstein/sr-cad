@@ -47,10 +47,10 @@ pub mod helpers;
 pub mod machines;
 pub mod options;
 
-use cadcraft_doc::Handle;
-use cadcraft_geom::Vec2;
 use serde::Serialize;
 use serde_json::Value;
+use sr_cad_doc::Handle;
+use sr_cad_geom::Vec2;
 
 use crate::{EngineError, Interactive, Result, Session};
 

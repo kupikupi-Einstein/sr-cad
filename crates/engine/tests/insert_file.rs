@@ -1,12 +1,12 @@
 //! INSERT of exploded blocks (`*NAME`) and of drawing files (`-INSERT path`, `NAME=path`, JSON
 //! `file`), read through the io hooks (#340).
 
-use cadcraft_engine::Session;
-use cadcraft_engine::cmd::file::{IoHooks, set_io};
-use cadcraft_engine::doc::color::Color;
-use cadcraft_engine::doc::geom::Vec3;
-use cadcraft_engine::doc::{Block, Circle, Drawing, Entity, EntityKind, HVal, Handle, Insert, Layer, Line};
 use serde_json::json;
+use sr_cad_engine::Session;
+use sr_cad_engine::cmd::file::{IoHooks, set_io};
+use sr_cad_engine::doc::color::Color;
+use sr_cad_engine::doc::geom::Vec3;
+use sr_cad_engine::doc::{Block, Circle, Drawing, Entity, EntityKind, HVal, Handle, Insert, Layer, Line};
 
 /// A drawing file in a test format: its bytes are "x,y", the $INSBASE. Model space: a line from
 /// 10,10 to 20,10 on layer PARTS (colour 1), and a reference to block NUT (a circle) at 10,10.
@@ -46,7 +46,7 @@ fn hooks() {
 
 /// Write a test drawing file with $INSBASE `base`; returns its path.
 fn file(name: &str, base: &str) -> String {
-    let dir = std::env::temp_dir().join(format!("cadcraft-insert-file-{}", std::process::id()));
+    let dir = std::env::temp_dir().join(format!("sr-cad-insert-file-{}", std::process::id()));
     std::fs::create_dir_all(&dir).unwrap();
     let p = dir.join(name);
     std::fs::write(&p, base).unwrap();

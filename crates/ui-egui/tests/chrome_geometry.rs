@@ -1,11 +1,11 @@
 //! The real app's painted geometry at native and compact window sizes.
 
-use cadcraft_engine::Session;
-use cadcraft_geom::Vec2;
-use cadcraft_ui_egui::{CadApp, Services};
 use egui::{Rect, Shape, vec2};
 use egui_kittest::Harness;
 use egui_kittest::kittest::Queryable;
+use sr_cad_engine::Session;
+use sr_cad_geom::Vec2;
+use sr_cad_ui_egui::{CadApp, Services};
 
 fn harness(width: f32, height: f32, scale: f32, message: bool) -> Harness<'static, CadApp> {
     let mut app = CadApp::new(Session::default(), Services::default());

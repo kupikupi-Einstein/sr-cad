@@ -1,8 +1,8 @@
 //! `properties.set` rejects a lineweight it cannot parse and leaves the object's lineweight alone.
 
-use cadcraft_engine::Session;
-use cadcraft_engine::doc::{EntityKind, Handle, Lineweight};
 use serde_json::json;
+use sr_cad_engine::Session;
+use sr_cad_engine::doc::{EntityKind, Handle, Lineweight};
 
 fn lineweight(s: &Session, h: Handle) -> Lineweight {
     s.doc().unwrap().entity(h).unwrap().common.lineweight

@@ -2,11 +2,11 @@
 //! coincident grips of the other selected objects with it, and Move/Rotate/Scale/Mirror
 //! transform every selected object.
 
-use cadcraft_engine::Session;
-use cadcraft_engine::doc::{EntityKind, Handle};
-use cadcraft_engine::geom::Vec2;
-use cadcraft_engine::grips::GripMode;
 use serde_json::json;
+use sr_cad_engine::Session;
+use sr_cad_engine::doc::{EntityKind, Handle};
+use sr_cad_engine::geom::Vec2;
+use sr_cad_engine::grips::GripMode;
 
 fn line(s: &mut Session, a: [f64; 2], b: [f64; 2]) -> Handle {
     let r = s.execute("line", &json!({ "points": [a, b] })).unwrap();

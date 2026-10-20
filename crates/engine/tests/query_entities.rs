@@ -1,8 +1,8 @@
 //! The `entities` query (control channel `engine.execute`, MCP `query_entities`) rejects malformed
 //! filters instead of ignoring them and returning everything.
 
-use cadcraft_engine::Session;
 use serde_json::json;
+use sr_cad_engine::Session;
 
 #[test]
 fn malformed_filters_are_errors() {

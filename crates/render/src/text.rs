@@ -3,12 +3,12 @@
 use std::collections::HashMap;
 use std::sync::{Arc, OnceLock, PoisonError, RwLock};
 
-use cadcraft_fonts::{TextGlyph, ttf};
-use cadcraft_geom::{Bounds2, Mat3, Vec2};
 use lyon_tessellation::geometry_builder::{BuffersBuilder, VertexBuffers};
 use lyon_tessellation::math::point;
 use lyon_tessellation::path::Path;
 use lyon_tessellation::{FillOptions, FillTessellator, FillVertex};
+use sr_cad_fonts::{TextGlyph, ttf};
+use sr_cad_geom::{Bounds2, Mat3, Vec2};
 
 const MAX_POINTS: usize = 16_384;
 const MAX_ENTRIES: usize = 8192;

@@ -2,8 +2,8 @@
 //! Every option runs the `layout.*` command bodies, so validation matches the JSON form and the
 //! command is one undo step.
 
-use cadcraft_doc::Space;
 use serde_json::{Value, json};
+use sr_cad_doc::Space;
 
 use super::super::find_command;
 use super::super::qselect::wildcard;

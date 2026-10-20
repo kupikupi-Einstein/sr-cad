@@ -1,9 +1,9 @@
 //! Draw order (#439): DRAWORDER's Above objects / Under objects / Front / Back, typed and as JSON,
 //! TEXTTOFRONT and HATCHTOBACK.
 
-use cadcraft_engine::doc::{EntityKind, Handle};
-use cadcraft_engine::{Input, Session};
 use serde_json::json;
+use sr_cad_engine::doc::{EntityKind, Handle};
+use sr_cad_engine::{Input, Session};
 
 /// A session with five lines; their handles in draw order.
 fn five_lines() -> (Session, Vec<Handle>) {

@@ -1,4 +1,4 @@
-//! The CADCraft drawing database.
+//! The SR-Cad drawing database.
 //!
 //! A [`Drawing`] holds the header variables, symbol tables (layers, linetypes, styles), block
 //! definitions, model space and paper-space layouts. Entity collections are copy-on-write
@@ -22,8 +22,6 @@ mod tables;
 use std::collections::{BTreeMap, BTreeSet};
 
 pub use array::*;
-pub use cadcraft_color as color;
-pub use cadcraft_geom as geom;
 pub use constraint::*;
 pub use entity::*;
 pub use extents::{MAX_BLOCK_DEPTH, entity_bounds};
@@ -32,10 +30,12 @@ pub use header::{HVal, Header};
 pub use plotstyle::*;
 pub use plotter::*;
 pub use refedit::{RefEdit, WorkItem};
+pub use sr_cad_color as color;
+pub use sr_cad_geom as geom;
 pub use store::EntityStore;
 pub use tables::*;
 
-/// File data CADCraft doesn't model, kept for saving (#528).
+/// File data SR-Cad doesn't model, kept for saving (#528).
 pub mod dynblock;
 pub mod foreign;
 
@@ -85,7 +85,7 @@ impl Space {
 #[derive(Clone, Debug, PartialEq)]
 pub struct Drawing {
     pub header: Header,
-    /// File data CADCraft does not model, written back on save.
+    /// File data SR-Cad does not model, written back on save.
     pub foreign: std::sync::Arc<foreign::Foreign>,
     pub layers: Vec<Layer>,
     pub linetypes: Vec<Linetype>,
@@ -350,8 +350,8 @@ impl Drawing {
     }
 
     /// Bounds of all visible entities in a space.
-    pub fn extents(&self, space: &Space) -> cadcraft_geom::Bounds2 {
-        let mut b = cadcraft_geom::Bounds2::EMPTY;
+    pub fn extents(&self, space: &Space) -> sr_cad_geom::Bounds2 {
+        let mut b = sr_cad_geom::Bounds2::EMPTY;
         if let Some(store) = self.space(space) {
             for e in store.iter() {
                 if self.is_visible(e) {

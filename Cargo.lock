@@ -546,201 +546,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fc652a48c352aef3ea3aed32080501cf3ef6ed5da78602a020c991775b0aff04"
 
 [[package]]
-name = "cadcraft"
-version = "0.7.0"
-dependencies = [
- "cadcraft-engine",
- "cadcraft-io",
- "cadcraft-ui-egui",
- "eframe",
- "egui",
- "hidapi",
- "log",
- "muda",
- "objc2-app-kit 0.3.2",
- "rfd",
- "serde_json",
- "sys-locale",
- "windows",
- "winit",
- "winresource",
- "zbus",
-]
-
-[[package]]
-name = "cadcraft-cli"
-version = "0.7.0"
-dependencies = [
- "cadcraft-engine",
- "cadcraft-io",
- "cadcraft-mcp",
- "cadcraft-render",
- "serde_json",
-]
-
-[[package]]
-name = "cadcraft-color"
-version = "0.7.0"
-dependencies = [
- "serde",
-]
-
-[[package]]
-name = "cadcraft-constraints"
-version = "0.7.0"
-dependencies = [
- "cadcraft-doc",
- "cadcraft-geom",
- "serde",
- "thiserror 2.0.21",
-]
-
-[[package]]
-name = "cadcraft-doc"
-version = "0.7.0"
-dependencies = [
- "cadcraft-color",
- "cadcraft-geom",
- "serde",
- "serde_json",
- "thiserror 2.0.21",
-]
-
-[[package]]
-name = "cadcraft-dwg"
-version = "0.7.0"
-dependencies = [
- "acadrust",
-]
-
-[[package]]
-name = "cadcraft-dxf"
-version = "0.7.0"
-dependencies = [
- "encoding_rs",
- "log",
- "thiserror 2.0.21",
-]
-
-[[package]]
-name = "cadcraft-engine"
-version = "0.7.0"
-dependencies = [
- "cadcraft-color",
- "cadcraft-constraints",
- "cadcraft-doc",
- "cadcraft-dxf",
- "cadcraft-fonts",
- "cadcraft-geom",
- "cadcraft-io",
- "cadcraft-render",
- "log",
- "rstar",
- "serde",
- "serde_json",
- "thiserror 2.0.21",
-]
-
-[[package]]
-name = "cadcraft-fonts"
-version = "0.7.0"
-dependencies = [
- "cadcraft-geom",
- "harfrust",
- "skrifa 0.47.0",
- "unicode-bidi",
-]
-
-[[package]]
-name = "cadcraft-geom"
-version = "0.7.0"
-dependencies = [
- "serde",
-]
-
-[[package]]
-name = "cadcraft-io"
-version = "0.7.0"
-dependencies = [
- "cadcraft-color",
- "cadcraft-doc",
- "cadcraft-dwg",
- "cadcraft-dxf",
- "cadcraft-fonts",
- "cadcraft-geom",
- "cadcraft-render",
- "miniz_oxide 0.8.9",
- "quick-xml",
- "serde",
- "serde_json",
- "thiserror 2.0.21",
- "tiny-skia",
-]
-
-[[package]]
-name = "cadcraft-mcp"
-version = "0.7.0"
-dependencies = [
- "cadcraft-engine",
- "cadcraft-io",
- "cadcraft-render",
- "log",
- "serde_json",
-]
-
-[[package]]
-name = "cadcraft-render"
-version = "0.7.0"
-dependencies = [
- "cadcraft-color",
- "cadcraft-doc",
- "cadcraft-fonts",
- "cadcraft-geom",
- "lyon_tessellation",
- "rayon",
- "serde_json",
- "tiny-skia",
-]
-
-[[package]]
-name = "cadcraft-ui-egui"
-version = "0.7.0"
-dependencies = [
- "cadcraft-color",
- "cadcraft-doc",
- "cadcraft-engine",
- "cadcraft-fonts",
- "cadcraft-geom",
- "cadcraft-render",
- "craft-ui",
- "egui",
- "egui-wgpu",
- "egui_kittest",
- "image",
- "log",
- "naga",
- "serde",
- "serde_json",
- "toml",
-]
-
-[[package]]
-name = "cadcraft-web"
-version = "0.7.0"
-dependencies = [
- "cadcraft-engine",
- "cadcraft-io",
- "cadcraft-ui-egui",
- "eframe",
- "egui",
- "log",
- "serde_json",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "web-sys",
-]
-
-[[package]]
 name = "calloop"
 version = "0.13.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3554,6 +3359,201 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d9571ea910ebd84c86af4b3ed27f9dbdc6ad06f17c5f96146b2b671e2976744f"
 dependencies = [
  "bitflags 2.13.2",
+]
+
+[[package]]
+name = "sr-cad"
+version = "0.7.0"
+dependencies = [
+ "eframe",
+ "egui",
+ "hidapi",
+ "log",
+ "muda",
+ "objc2-app-kit 0.3.2",
+ "rfd",
+ "serde_json",
+ "sr-cad-engine",
+ "sr-cad-io",
+ "sr-cad-ui-egui",
+ "sys-locale",
+ "windows",
+ "winit",
+ "winresource",
+ "zbus",
+]
+
+[[package]]
+name = "sr-cad-cli"
+version = "0.7.0"
+dependencies = [
+ "serde_json",
+ "sr-cad-engine",
+ "sr-cad-io",
+ "sr-cad-mcp",
+ "sr-cad-render",
+]
+
+[[package]]
+name = "sr-cad-color"
+version = "0.7.0"
+dependencies = [
+ "serde",
+]
+
+[[package]]
+name = "sr-cad-constraints"
+version = "0.7.0"
+dependencies = [
+ "serde",
+ "sr-cad-doc",
+ "sr-cad-geom",
+ "thiserror 2.0.21",
+]
+
+[[package]]
+name = "sr-cad-doc"
+version = "0.7.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "sr-cad-color",
+ "sr-cad-geom",
+ "thiserror 2.0.21",
+]
+
+[[package]]
+name = "sr-cad-dwg"
+version = "0.7.0"
+dependencies = [
+ "acadrust",
+]
+
+[[package]]
+name = "sr-cad-dxf"
+version = "0.7.0"
+dependencies = [
+ "encoding_rs",
+ "log",
+ "thiserror 2.0.21",
+]
+
+[[package]]
+name = "sr-cad-engine"
+version = "0.7.0"
+dependencies = [
+ "log",
+ "rstar",
+ "serde",
+ "serde_json",
+ "sr-cad-color",
+ "sr-cad-constraints",
+ "sr-cad-doc",
+ "sr-cad-dxf",
+ "sr-cad-fonts",
+ "sr-cad-geom",
+ "sr-cad-io",
+ "sr-cad-render",
+ "thiserror 2.0.21",
+]
+
+[[package]]
+name = "sr-cad-fonts"
+version = "0.7.0"
+dependencies = [
+ "harfrust",
+ "skrifa 0.47.0",
+ "sr-cad-geom",
+ "unicode-bidi",
+]
+
+[[package]]
+name = "sr-cad-geom"
+version = "0.7.0"
+dependencies = [
+ "serde",
+]
+
+[[package]]
+name = "sr-cad-io"
+version = "0.7.0"
+dependencies = [
+ "miniz_oxide 0.8.9",
+ "quick-xml",
+ "serde",
+ "serde_json",
+ "sr-cad-color",
+ "sr-cad-doc",
+ "sr-cad-dwg",
+ "sr-cad-dxf",
+ "sr-cad-fonts",
+ "sr-cad-geom",
+ "sr-cad-render",
+ "thiserror 2.0.21",
+ "tiny-skia",
+]
+
+[[package]]
+name = "sr-cad-mcp"
+version = "0.7.0"
+dependencies = [
+ "log",
+ "serde_json",
+ "sr-cad-engine",
+ "sr-cad-io",
+ "sr-cad-render",
+]
+
+[[package]]
+name = "sr-cad-render"
+version = "0.7.0"
+dependencies = [
+ "lyon_tessellation",
+ "rayon",
+ "serde_json",
+ "sr-cad-color",
+ "sr-cad-doc",
+ "sr-cad-fonts",
+ "sr-cad-geom",
+ "tiny-skia",
+]
+
+[[package]]
+name = "sr-cad-ui-egui"
+version = "0.7.0"
+dependencies = [
+ "craft-ui",
+ "egui",
+ "egui-wgpu",
+ "egui_kittest",
+ "image",
+ "log",
+ "naga",
+ "serde",
+ "serde_json",
+ "sr-cad-color",
+ "sr-cad-doc",
+ "sr-cad-engine",
+ "sr-cad-fonts",
+ "sr-cad-geom",
+ "sr-cad-render",
+ "toml",
+]
+
+[[package]]
+name = "sr-cad-web"
+version = "0.7.0"
+dependencies = [
+ "eframe",
+ "egui",
+ "log",
+ "serde_json",
+ "sr-cad-engine",
+ "sr-cad-io",
+ "sr-cad-ui-egui",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "web-sys",
 ]
 
 [[package]]

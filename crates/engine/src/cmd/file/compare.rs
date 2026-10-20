@@ -8,9 +8,9 @@ use std::collections::HashMap;
 use std::hash::{Hash, Hasher};
 use std::sync::Arc;
 
-use cadcraft_doc::{Drawing, Entity, EntityKind, Handle, MAX_BLOCK_DEPTH, Space, entity_bounds};
-use cadcraft_geom::{Bounds2, Vec2};
 use serde_json::{Value, json};
+use sr_cad_doc::{Drawing, Entity, EntityKind, Handle, MAX_BLOCK_DEPTH, Space, entity_bounds};
+use sr_cad_geom::{Bounds2, Vec2};
 
 use super::super::*;
 use super::{base64_decode, io};

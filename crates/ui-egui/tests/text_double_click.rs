@@ -1,12 +1,12 @@
 //! Double-clicking text with no command running edits it, as in AutoCAD (#842).
 
-use cadcraft_engine::doc::EntityKind;
-use cadcraft_engine::geom::Vec2;
-use cadcraft_engine::{Input, Session};
-use cadcraft_ui_egui::{CadApp, Services};
 use egui::{Event, Modifiers, PointerButton, Pos2, vec2};
 use egui_kittest::Harness;
 use serde_json::json;
+use sr_cad_engine::doc::EntityKind;
+use sr_cad_engine::geom::Vec2;
+use sr_cad_engine::{Input, Session};
+use sr_cad_ui_egui::{CadApp, Services};
 
 fn harness() -> Harness<'static, CadApp> {
     let mut app = CadApp::new(Session::new(), Services::default());

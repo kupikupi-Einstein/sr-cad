@@ -1,8 +1,8 @@
 //! A model-space PNG plot with `fit: false` and no `scale` plots at 1:1, as PDF does (issue #713).
 
-use cadcraft_doc::{Common, Drawing, EntityKind, Line, Space};
-use cadcraft_geom::Vec3;
 use serde_json::{Value, json};
+use sr_cad_doc::{Common, Drawing, EntityKind, Line, Space};
+use sr_cad_geom::Vec3;
 
 /// The RGBA rows of an 8-bit RGBA PNG (the only kind the plotter writes).
 fn decode_rgba(png: &[u8]) -> (usize, Vec<Vec<u8>>) {
@@ -65,7 +65,7 @@ fn plotted_mm(opts: Value) -> f64 {
     if let (Some(o), Some(e)) = (o.as_object_mut(), opts.as_object()) {
         o.extend(e.clone());
     }
-    let (w, rows) = decode_rgba(&cadcraft_io::plotter::plot(&d, &Space::Model, &o).unwrap());
+    let (w, rows) = decode_rgba(&sr_cad_io::plotter::plot(&d, &Space::Model, &o).unwrap());
     let inked: Vec<usize> = (0..w).filter(|x| rows.iter().any(|r| r[x * 4] < 128)).collect();
     let (first, last) = (inked.first().unwrap(), inked.last().unwrap());
     (last - first) as f64 * 25.4 / 100.0

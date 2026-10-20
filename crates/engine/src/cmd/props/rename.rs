@@ -2,8 +2,8 @@
 
 use std::sync::Arc;
 
-use cadcraft_doc::{Drawing, EntityKind, EntityStore, Handle};
 use serde_json::json;
+use sr_cad_doc::{Drawing, EntityKind, EntityStore, Handle};
 
 use super::super::bad;
 use crate::{Accept, EngineError, Input, Interactive, Prompt, Result, Session, Step};

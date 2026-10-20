@@ -3,10 +3,10 @@
 //! viewports. Changes go through `viewport.set` / `layer.new` / `layer.set`, so validation
 //! matches the JSON forms and the whole session is one undo step.
 
-use cadcraft_color::Color;
-use cadcraft_doc::{Handle, Space};
-use cadcraft_geom::Vec2;
 use serde_json::{Value, json};
+use sr_cad_color::Color;
+use sr_cad_doc::{Handle, Space};
+use sr_cad_geom::Vec2;
 
 use super::super::find_command;
 use super::super::qselect::wildcard;
@@ -284,7 +284,7 @@ impl VplayerM {
                         .layouts
                         .iter()
                         .flat_map(|l| l.entities.iter())
-                        .filter(|e| matches!(&e.kind, cadcraft_doc::EntityKind::Viewport(v) if v.id != 1))
+                        .filter(|e| matches!(&e.kind, sr_cad_doc::EntityKind::Viewport(v) if v.id != 1))
                         .map(|e| e.handle)
                         .collect();
                     let mut made = Vec::new();

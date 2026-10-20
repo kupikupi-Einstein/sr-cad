@@ -1,8 +1,8 @@
 //! The CAL / QuickCalc evaluator: numbers and points (`[x,y]`, `[d<a]`), arithmetic and vector
 //! arithmetic, numeric and geometric functions; unit conversion; values picked from the drawing.
 
-use cadcraft_geom::Vec2;
 use serde_json::{Map, Value, json};
+use sr_cad_geom::Vec2;
 
 /// Longest expression accepted.
 const MAX_LEN: usize = 10_000;

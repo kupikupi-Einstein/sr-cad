@@ -1,10 +1,10 @@
 //! Model space is built on all cores for the screen: the chunks are joined in drawing order, so
 //! the display list is exactly what one thread builds (vertex and triangle indices included).
 
-use cadcraft_engine::Session;
-use cadcraft_engine::doc::Space;
-use cadcraft_engine::render::{DisplayList, Options, build, build_entities};
 use serde_json::json;
+use sr_cad_engine::Session;
+use sr_cad_engine::doc::Space;
+use sr_cad_engine::render::{DisplayList, Options, build, build_entities};
 
 fn same(a: &DisplayList, b: &DisplayList) {
     assert_eq!(a.prims.len(), b.prims.len());

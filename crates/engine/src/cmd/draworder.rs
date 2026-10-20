@@ -1,11 +1,11 @@
 //! Draw order: DRAWORDER (Above objects / Under objects / Front / Back), TEXTTOFRONT and
 //! HATCHTOBACK. The order is the order of a space's entity store, which DXF files keep as the
-//! order of their entity records (`cadcraft-io` also applies a SORTENTSTABLE when it reads one).
+//! order of their entity records (`sr-cad-io` also applies a SORTENTSTABLE when it reads one).
 
 use std::collections::{HashMap, HashSet};
 
-use cadcraft_doc::{EntityKind, Handle};
 use serde_json::{Value, json};
+use sr_cad_doc::{EntityKind, Handle};
 
 use super::machines::{SelOutcome, SelectPhase, SelectRun};
 use super::*;

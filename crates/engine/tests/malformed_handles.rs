@@ -1,8 +1,8 @@
 //! A `handle`/`handles` param that can't be read is an error. It never falls back to the current
 //! selection, and bad entries are never dropped without a word (#330).
 
-use cadcraft_engine::Session;
 use serde_json::{Value, json};
+use sr_cad_engine::Session;
 
 fn circles(s: &mut Session) -> Vec<Value> {
     s.execute("entities", &json!({ "type": "Circle" })).unwrap()["entities"].as_array().cloned().unwrap_or_default()

@@ -1,9 +1,9 @@
 //! Keywords typed at "Select objects" (#428): BOX, SIngle, AUto, Multiple, Group, Add, Remove and
 //! Undo.
 
-use cadcraft_engine::Session;
-use cadcraft_engine::doc::EntityKind;
 use serde_json::json;
+use sr_cad_engine::Session;
+use sr_cad_engine::doc::EntityKind;
 
 /// Three lines on the X axis: A 0–10, B 12–20, C 30–40.
 fn drawing() -> Session {

@@ -1,10 +1,10 @@
 //! Geometric constraints on ellipses, splines and block references, Smooth (G2) and the
 //! degrees-of-freedom report (`constraints.dof`, `constraints.inspect`) (#546).
 
-use cadcraft_doc::{EntityKind, Handle};
-use cadcraft_engine::Session;
-use cadcraft_geom::Vec2;
 use serde_json::{Value, json};
+use sr_cad_doc::{EntityKind, Handle};
+use sr_cad_engine::Session;
+use sr_cad_geom::Vec2;
 
 fn last(s: &Session) -> Handle {
     s.doc().unwrap().model.iter().last().map(|e| e.handle).unwrap()

@@ -1,3 +1,13 @@
+SR-Cad
+SR-Cad is a modified version of CADCraft (https://github.com/storytold/cadcraft), renamed and
+redistributed under the same MIT OR Apache-2.0 terms. It is based on CADCraft by the ArtCraft team,
+but it is not made, sponsored or endorsed by the ArtCraft Team, and it does not include the ArtCraft
+name, wordmark or logos (CADCraft's docs/brand/ directory has been removed).
+
+The original CADCraft notice follows, unchanged.
+
+------------------------------------------------------------------------------------------------
+
 CADCraft
 Copyright (c) 2026 ArtCraft Team and the CADCraft contributors.
 Licensed under the MIT License or the Apache License, Version 2.0, at your option

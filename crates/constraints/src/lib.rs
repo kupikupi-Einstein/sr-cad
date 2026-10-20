@@ -1,4 +1,4 @@
-//! CADCraft parametric solver.
+//! SR-Cad parametric solver.
 //!
 //! Maps constrained lines, arcs, circles, points, polyline vertices, ellipses, splines and block
 //! references to a parameter vector
@@ -32,9 +32,9 @@ mod residual;
 
 use std::collections::{BTreeMap, HashMap};
 
-use cadcraft_doc::{Constraint, ConstraintKind, Drawing, GeomRef, Handle};
-use cadcraft_geom::Vec2;
 use serde::Serialize;
+use sr_cad_doc::{Constraint, ConstraintKind, Drawing, GeomRef, Handle};
+use sr_cad_geom::Vec2;
 
 pub use auto::{INFER_TYPES, InferOptions, autoconstrain, infer, infer_placed};
 pub use dof::{DofReport, DofStatus, ObjectDof, dof};
@@ -637,7 +637,7 @@ pub fn set_parameter(d: &mut Drawing, name: &str, expr_text: &str, opts: &SolveO
     } else if let Some(p) = trial.parametric.parameters.iter_mut().find(|p| p.name == name) {
         p.expr = expr_text.trim().to_string();
     } else {
-        trial.parametric.parameters.push(cadcraft_doc::Parameter { name: name.into(), expr: expr_text.trim().into(), description: String::new() });
+        trial.parametric.parameters.push(sr_cad_doc::Parameter { name: name.into(), expr: expr_text.trim().into(), description: String::new() });
     }
     // Every expression must still evaluate.
     for row in parameter_table(&trial) {

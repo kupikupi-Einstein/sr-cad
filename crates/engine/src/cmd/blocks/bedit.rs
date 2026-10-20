@@ -4,8 +4,8 @@
 //! drawing shows the change; BCLOSE goes back to the drawing, saving or discarding what isn't saved.
 //! The state is [`crate::blockedit`].
 
-use cadcraft_doc::{Drawing, EntityKind, Handle};
 use serde_json::{Value, json};
+use sr_cad_doc::{Drawing, EntityKind, Handle};
 
 use crate::cmd::curves::{KW, handle_value};
 use crate::cmd::{CommandSpec, bad, bool_or, str_param};
@@ -123,7 +123,7 @@ fn open(s: &mut Session, name: &str, create: bool) -> Result<Value> {
     let dynamic =
         |be: &crate::blockedit::BlockEdit| crate::blockedit::has_dynamic_data(&be.host.doc, if be.current { "*Model_Space" } else { &be.name });
     if s.state().is_ok_and(|st| st.block_edit.as_ref().is_some_and(dynamic)) {
-        s.echo("This is a dynamic block: its parameters and actions are kept but can't be edited in CADCraft yet.");
+        s.echo("This is a dynamic block: its parameters and actions are kept but can't be edited in SR-Cad yet.");
     }
     Ok(json!({ "block": name, "new": new }))
 }

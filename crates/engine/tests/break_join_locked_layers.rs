@@ -1,8 +1,8 @@
 //! BREAK, BREAKATPOINT and JOIN leave objects on locked layers alone (#727).
 
-use cadcraft_engine::geom::Vec2;
-use cadcraft_engine::{Input, Session};
 use serde_json::{Value, json};
+use sr_cad_engine::geom::Vec2;
+use sr_cad_engine::{Input, Session};
 
 fn h(r: &Value) -> String {
     r["handle"].as_str().or_else(|| r["handles"][0].as_str()).unwrap().to_string()
@@ -45,8 +45,8 @@ fn break_and_breakatpoint_refuse_a_locked_line() {
     let unlocked = snapshot(&s);
     let r = s.execute("break", &json!({"handle": a, "p1": [3, 0], "p2": [7, 0]})).unwrap();
     assert_eq!(r["handles"].as_array().unwrap().len(), 2);
-    assert!(s.doc().unwrap().entity(cadcraft_engine::doc::Handle::parse_hex(&a).unwrap()).is_none());
-    assert!(s.doc().unwrap().entity(cadcraft_engine::doc::Handle::parse_hex(&control).unwrap()).is_some());
+    assert!(s.doc().unwrap().entity(sr_cad_engine::doc::Handle::parse_hex(&a).unwrap()).is_none());
+    assert!(s.doc().unwrap().entity(sr_cad_engine::doc::Handle::parse_hex(&control).unwrap()).is_some());
     let broken = snapshot(&s);
     s.execute("undo", &json!({})).unwrap();
     assert_eq!(snapshot(&s), unlocked);
@@ -104,7 +104,7 @@ fn join_keeps_a_locked_original_in_a_mixed_layer_pair() {
         let before = snapshot(&s);
         assert!(s.execute("join", &json!({"handles": [a, b]})).is_err());
         assert_eq!(snapshot(&s), before, "locked_first = {locked_first}");
-        assert!(s.doc().unwrap().entity(cadcraft_engine::doc::Handle::parse_hex(locked).unwrap()).is_some());
+        assert!(s.doc().unwrap().entity(sr_cad_engine::doc::Handle::parse_hex(locked).unwrap()).is_some());
     }
 }
 

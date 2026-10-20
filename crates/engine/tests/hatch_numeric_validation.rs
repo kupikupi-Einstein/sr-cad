@@ -1,9 +1,9 @@
 //! HATCHEDIT refuses an explicit bad `scale` or `angle` before changing anything: no partial
 //! edit, no undo step, redo history kept.
 
-use cadcraft_engine::Session;
-use cadcraft_engine::doc::EntityKind;
 use serde_json::{Value, json};
+use sr_cad_engine::Session;
+use sr_cad_engine::doc::EntityKind;
 
 fn fixture() -> (Session, String) {
     let mut s = Session::new();
@@ -33,7 +33,7 @@ fn assert_props(s: &Session, scale: f64, angle: f64) {
     assert!((sc - scale).abs() < 1e-9 && (an - angle).abs() < 1e-9, "scale {sc}, angle {an}");
 }
 
-fn edit(s: &mut Session, handle: &str, extra: Value) -> cadcraft_engine::Result<Value> {
+fn edit(s: &mut Session, handle: &str, extra: Value) -> sr_cad_engine::Result<Value> {
     let mut params = json!({ "handles": [handle] });
     for (k, v) in extra.as_object().unwrap() {
         params[k] = v.clone();

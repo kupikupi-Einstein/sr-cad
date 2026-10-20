@@ -1,10 +1,10 @@
 //! STRETCH with polygon and fence selection: a crossing or window polygon marks the area whose
 //! vertices move; a fence marks none, so what it crosses moves whole.
 
-use cadcraft_engine::Session;
-use cadcraft_engine::doc::{EntityKind, Handle};
-use cadcraft_engine::geom::Vec2;
 use serde_json::json;
+use sr_cad_engine::Session;
+use sr_cad_engine::doc::{EntityKind, Handle};
+use sr_cad_engine::geom::Vec2;
 
 fn line(s: &mut Session, a: [f64; 2], b: [f64; 2]) -> String {
     s.execute("line", &json!({ "points": [a, b] })).unwrap()["handles"][0].as_str().unwrap().to_string()

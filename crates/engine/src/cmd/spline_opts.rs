@@ -1,9 +1,9 @@
 //! SPLINE's fit options: Knots, start/end Tangency, toLerance and Object (turn a polyline into a
 //! spline), for the prompt machine in `draw.rs` and the JSON form.
 
-use cadcraft_doc::{EntityKind, Handle};
-use cadcraft_geom::{FitOptions, KnotParam, Spline, Vec2};
 use serde_json::{Value, json};
+use sr_cad_doc::{EntityKind, Handle};
+use sr_cad_geom::{FitOptions, KnotParam, Spline, Vec2};
 
 use super::machines::{SelOutcome, SelectPhase, number};
 use super::{bad, curves, distinct_points, f64_or, point_param, targets};

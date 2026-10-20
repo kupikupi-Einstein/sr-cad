@@ -1,6 +1,6 @@
-use cadcraft_doc::{ConstraintKind, EntityKind, Handle};
-use cadcraft_geom::Vec2;
 use serde_json::json;
+use sr_cad_doc::{ConstraintKind, EntityKind, Handle};
+use sr_cad_geom::Vec2;
 
 use crate::{Input, Session, command_specs};
 

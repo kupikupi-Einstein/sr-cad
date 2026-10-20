@@ -1,7 +1,7 @@
 //! Residual equations for each constraint type.
 
-use cadcraft_doc::{Constraint, ConstraintKind, DistAxis, GeomRef};
-use cadcraft_geom::Vec2;
+use sr_cad_doc::{Constraint, ConstraintKind, DistAxis, GeomRef};
+use sr_cad_geom::Vec2;
 
 use crate::curves::circle_at;
 use crate::model::Model;
@@ -509,8 +509,8 @@ impl Built {
         };
         let ends = |r: &GeomRef| -> &'static [bool] {
             match r.sub {
-                cadcraft_doc::Sub::Start => &[false],
-                cadcraft_doc::Sub::End => &[true],
+                sr_cad_doc::Sub::Start => &[false],
+                sr_cad_doc::Sub::End => &[true],
                 _ => &[false, true],
             }
         };

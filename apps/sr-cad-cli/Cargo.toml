@@ -1,0 +1,17 @@
+[package]
+name = "sr-cad-cli"
+description = "SR-Cad command-line tool: info, convert, run scripts, export, commands, MCP server"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+
+[lints]
+workspace = true
+
+[dependencies]
+sr-cad-engine = { workspace = true }
+sr-cad-io = { workspace = true }
+sr-cad-mcp = { workspace = true }
+sr-cad-render = { workspace = true }
+serde_json = { workspace = true }

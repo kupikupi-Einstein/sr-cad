@@ -2,10 +2,10 @@
 //! UNISOLATEOBJECTS (#428): JSON forms, typed forms, and hidden objects skipped by display and
 //! selection.
 
-use cadcraft_engine::doc::{Handle, Space};
-use cadcraft_engine::geom::{Bounds2, Vec2};
-use cadcraft_engine::{Session, render, select};
 use serde_json::json;
+use sr_cad_engine::doc::{Handle, Space};
+use sr_cad_engine::geom::{Bounds2, Vec2};
+use sr_cad_engine::{Session, render, select};
 
 /// Two lines and a circle on layer 0, a line and a circle on "Walls" (the last circle red).
 fn drawing() -> (Session, Vec<Handle>) {

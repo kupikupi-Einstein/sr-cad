@@ -9,9 +9,9 @@
 use std::collections::HashSet;
 use std::sync::Arc;
 
-use cadcraft_doc::{Drawing, Entity, EntityStore, Handle, entity_bounds};
 use serde::Serialize;
 use serde::ser;
+use sr_cad_doc::{Drawing, Entity, EntityStore, Handle, entity_bounds};
 
 use crate::{EngineError, Session};
 

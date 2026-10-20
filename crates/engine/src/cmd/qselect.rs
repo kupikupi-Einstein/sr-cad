@@ -1,9 +1,9 @@
 //! QSELECT: build a selection set from an object type and a property filter
 //! (`property operator value`), and `qselect.info` for the Quick Select dialog.
 
-use cadcraft_color::Color;
-use cadcraft_doc::{Drawing, Entity, Handle};
 use serde_json::{Value, json};
+use sr_cad_color::Color;
+use sr_cad_doc::{Drawing, Entity, Handle};
 
 use super::*;
 use crate::{Result, Session};

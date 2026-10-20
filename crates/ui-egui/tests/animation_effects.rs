@@ -2,10 +2,10 @@
 //! once and wheel scrolling doesn't glide. View ▸ Accessibility ▸ Animation Effects follows the OS
 //! by default, or turns them on or off whatever it says.
 
-use cadcraft_engine::Session;
-use cadcraft_ui_egui::animation::AnimationPref;
-use cadcraft_ui_egui::{CadApp, Services, UiState, menus};
 use serde_json::json;
+use sr_cad_engine::Session;
+use sr_cad_ui_egui::animation::AnimationPref;
+use sr_cad_ui_egui::{CadApp, Services, UiState, menus};
 
 fn app() -> CadApp {
     CadApp::new(Session::new(), Services::default())

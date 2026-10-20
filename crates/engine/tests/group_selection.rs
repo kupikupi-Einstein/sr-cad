@@ -1,10 +1,10 @@
 //! Groups (#417), part 2: PICKSTYLE group selection (clicks and "Select objects" prompts pick
 //! whole selectable groups; Ctrl+Shift+A toggles it) and the -GROUP options.
 
-use cadcraft_engine::doc::Handle;
-use cadcraft_engine::geom::Vec2;
-use cadcraft_engine::{Input, Session};
 use serde_json::json;
+use sr_cad_engine::doc::Handle;
+use sr_cad_engine::geom::Vec2;
+use sr_cad_engine::{Input, Session};
 
 /// Four horizontal lines at y = 0, 5, 10, 15; their handles.
 fn lines() -> (Session, Vec<Handle>) {

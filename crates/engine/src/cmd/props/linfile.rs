@@ -1,9 +1,9 @@
 //! Linetypes from the user's own `.lin` files: LINETYPE `{load, file | text}` and the
 //! command-line -LINETYPE (`?`, `Load` from the built-in library or a file, `Set`).
 
-use cadcraft_doc::library::files::parse_lin;
-use cadcraft_doc::{Drawing, Linetype};
 use serde_json::{Value, json};
+use sr_cad_doc::library::files::parse_lin;
+use sr_cad_doc::{Drawing, Linetype};
 
 use super::super::helpers::support_text;
 use super::super::qselect::wildcard;

@@ -1,9 +1,9 @@
 //! Host-independent 3D mouse preferences and navigation. Device I/O lives in the desktop app.
 
-use cadcraft_engine::View;
-use cadcraft_geom::Vec2;
 use serde::{Deserialize, Serialize};
 use serde_json::{Value, json};
+use sr_cad_engine::View;
+use sr_cad_geom::Vec2;
 
 use crate::CadApp;
 

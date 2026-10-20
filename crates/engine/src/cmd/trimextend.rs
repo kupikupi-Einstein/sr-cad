@@ -4,9 +4,9 @@
 
 use std::sync::Arc;
 
-use cadcraft_doc::{Drawing, EntityKind, Handle};
-use cadcraft_geom::{Bounds2, Line, Vec2, line_line};
 use serde_json::{Value, json};
+use sr_cad_doc::{Drawing, EntityKind, Handle};
+use sr_cad_geom::{Bounds2, Line, Vec2, line_line};
 
 use super::helpers::{line, lwpoly, rect_vertices};
 use super::modify::{Edges, extend, trim};

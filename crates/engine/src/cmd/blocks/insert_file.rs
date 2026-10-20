@@ -9,8 +9,8 @@
 use std::collections::{BTreeMap, BTreeSet};
 use std::sync::Arc;
 
-use cadcraft_doc::{Block, Drawing, Entity, EntityKind, Handle};
 use serde_json::{Value, json};
+use sr_cad_doc::{Block, Drawing, Entity, EntityKind, Handle};
 
 use super::super::file::io;
 use super::super::modify::explode_kind;

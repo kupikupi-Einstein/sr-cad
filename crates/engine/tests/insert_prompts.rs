@@ -1,8 +1,8 @@
 //! Command-line INSERT: X/Y scale prompts and the Basepoint/Scale/Rotate options (#245).
 
-use cadcraft_engine::Session;
-use cadcraft_engine::doc::EntityKind;
 use serde_json::json;
+use sr_cad_engine::Session;
+use sr_cad_engine::doc::EntityKind;
 
 /// (x, y, x scale, y scale, rotation in degrees) of every block reference, in drawing order.
 fn inserts(s: &Session) -> Vec<(f64, f64, f64, f64, f64)> {
