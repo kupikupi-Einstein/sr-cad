@@ -1,0 +1,1 @@
+These are CADCraft's original CI workflows, kept for reference. GitHub only runs workflows in`n.github/workflows/; move a file back there to enable it (release.yml expects upstream's signing secrets).
